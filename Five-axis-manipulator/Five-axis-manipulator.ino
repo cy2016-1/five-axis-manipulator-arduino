@@ -1,5 +1,5 @@
 /*
-	编译时间：2022.2.8
+	编译时间：2022.2.9
 	适用主板：Arduino nano
 	食用方法：把舵机端口自行修改
 	适用机型：五轴(180°舵机)机械臂
@@ -49,7 +49,7 @@ void reset()
 	write_clip(0);
 }
 
-void write_lowest(int a)
+int write_lowest(int a)
 {
 	read_1 = lowest.read();
 	if (read_1 > a) {
@@ -71,7 +71,7 @@ void write_lowest(int a)
 	}
 }
 
-void write_joint1(int b)
+int write_joint1(int b)
 {
 	read_2 = joint1.read();
 	if (read_2 > b) {
@@ -93,7 +93,7 @@ void write_joint1(int b)
 	}
 }
 
-void write_joint2(int c)
+int write_joint2(int c)
 {
 	read_3 = joint2.read();
 	if (read_3 > c) {
@@ -115,7 +115,7 @@ void write_joint2(int c)
 	}
 }
 
-void write_joint3(int d)
+int write_joint3(int d)
 {
 	read_4 = joint3.read();
 	if (read_4 > d) {
@@ -137,7 +137,7 @@ void write_joint3(int d)
 	}
 }
 
-void write_clip(int e)
+int write_clip(int e)
 {
 	read_5 = clip.read();
 	if (read_5 > e) {
